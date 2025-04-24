@@ -85,5 +85,8 @@ From relase notes
 تنزيل مشروع لارافيل
 
 
+# composer create-project laravel/laravel:11 test
+
+
 
 
