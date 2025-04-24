@@ -124,3 +124,22 @@ Elequent ORM :
 
 عمل موديل مع المايجريشن تبعها
 
+-f
+--factory
+# php artisan make:model Car -f
+
+
+-s
+--seed
+# php artisan make:model Car -s
+
+
+-c
+--controller
+# php artisan make:model Car -c
+
+
+
+# php artisan make:model Car -mc
+
+with migration and controller 
