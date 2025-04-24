@@ -16,8 +16,12 @@ class UserController extends Controller
             ['id' => 5, 'name' => 'Wesam'],
             ['id' => 6, 'name' => 'Omar'],
         ];
-        foreach($users as $user) {
-            echo $user['id'] . '- ' . $user['name'] . "\n";
-        }
+
+        // foreach($users as $user) {
+        //     echo $user['id'] . '- ' . $user['name'] . "\n";
+        // }
+
+        return response()->json($users);
+
     }
 }

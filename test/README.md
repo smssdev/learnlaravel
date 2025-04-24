@@ -41,3 +41,25 @@ Route::post ..
 
 # php artisan make:controller UserController
 # php artisan make:controller WelcomeController
+
+=======================
+
+# JSON 
+# خفيف وسريع ومتوافق مع لغات البرمجة js,php, paython ,, etc.. 
+# تستخدم لنقل البيانات، لبناء ال api's
+
+# JSON JavaScript Object Rotation
+
+{
+    "name": "Mohammed",
+    "age": 20,
+    isAvaliable: true,
+    Array: ["car", "boat"]
+}
+as 
+key : value
+===============
+
+
+# convert text to json.
+
