@@ -11,3 +11,4 @@ Route::get('/user', function (Request $request) {
 
 Route::get('welcome', [WelcomeController::class,'welcome']);
 Route::get('user', [UserController::class,'index']);
+Route::get('user/{id}', [UserController::class,'checkUser']);
