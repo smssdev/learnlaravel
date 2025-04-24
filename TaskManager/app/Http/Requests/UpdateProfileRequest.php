@@ -25,7 +25,7 @@ class UpdateProfileRequest extends FormRequest
             'user_id' => 'someTimes|integer',
             'phone' => 'someTimes|string',
             'address' => 'nullable|string',
-            'date_of_birth' => 'nullable|string',
+            'date_of_birth' => 'nullable|date_format:d-m-Y',
             'bio' => 'nullable|string',
         ];
     }

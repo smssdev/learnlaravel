@@ -29,6 +29,9 @@ class ProfileController extends Controller
     {
         $profile = Profile::findOrFail($id);
         $validatedData = $request->validated();
+        if (!empty($validatedData['date_of_birth'])) {
+            $validatedData['date_of_birth'] = \Carbon\Carbon::createFromFormat('d-m-Y', $validatedData['date_of_birth'])->format('Y-m-d');
+        }
         $profile->update($validatedData);
         return response()->json($profile, 200);
     }
