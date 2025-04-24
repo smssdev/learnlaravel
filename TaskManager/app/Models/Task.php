@@ -9,8 +9,10 @@ class Task extends Model
 {
     use HasFactory;
 
-    protected $table= 'tasks'; // ممكن تخصيصه
-    protected $primaryKey = 'id'; // ممكن تخصيصه
+    // protected $table= 'tasks'; // ممكن تخصيصه
+    // protected $primaryKey = 'id'; // ممكن تخصيصه
+
+    protected $fillable = ['title','description','priority'];
 
 
 }

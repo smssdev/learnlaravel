@@ -149,3 +149,15 @@ with migration and controller
 table names ..
 
 protected $table= 'my_tasks';
+
+
+# Crud Create Read Update Delete 
+
+# php artisan make:controller TaskController
+
+# php artisan make:model Task -mc     model with controller .
+
+الكود الحالي اللي رح نكتبه مش أفضل كود يعني مش أفضل 
+clean code ..
+
+
