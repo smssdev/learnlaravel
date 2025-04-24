@@ -35,6 +35,15 @@ class TaskController extends Controller
          $task->update($request->only(['title','description','priority']));
         return response()->json($task,200);
     }
+    public function update2(Request $request, $id)
+    {
+        $task= Task::findOrFail($id);
+        $task->title= $request->title;
+        $task->description= $request->description;
+        $task->priority= $request->priority;
+        $task->save();
+        return response()->json($task,200);
+    }
     public function show($id)
     {
         $task= Task::find($id);
