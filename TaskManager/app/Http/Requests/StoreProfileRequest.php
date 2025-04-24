@@ -22,7 +22,7 @@ class StoreProfileRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'user_id' => 'required|integer',
+            'user_id' => 'required|exists:users,id',
             'phone' => 'required|string',
             'address' => 'nullable|string',
             'date_of_birth' => 'nullable|date_format:d-m-Y',
@@ -33,6 +33,7 @@ class StoreProfileRequest extends FormRequest
     public function messages()
     {
         return [
+            'user_id.exists' => 'اليوزر غير موجود',
             'user_id.required' => 'حقل المستخدم مطلوب.',
             'user_id.integer'  => 'يجب إدخال المستخدم كرقم صحيح.',
             'phone.required' => 'حقل الهاتف مطلوب.',

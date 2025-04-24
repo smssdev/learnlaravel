@@ -44,4 +44,8 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function profile() {
+        return $this->hasone(Profile::class); // اليوزر هذا اله واحد بروفايل
+    }
 }

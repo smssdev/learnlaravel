@@ -37,7 +37,7 @@ class ProfileController extends Controller
     }
     public function show($id)
     {
-        $profile = Profile::find($id);
+        $profile = Profile::where('user_id',$id)->firstOrFail();
         return response()->json($profile, 200);
     }
     public function destroy($id)
