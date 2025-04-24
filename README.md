@@ -267,3 +267,7 @@ https://laravel.com/docs/11.x/validation#available-validation-rules
 # use formRequest.
 
 # php artisan make:request StoreTaskRequest
+
+
+# php artisan make:controller TaskController --api
+
