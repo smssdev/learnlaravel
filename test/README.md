@@ -38,3 +38,6 @@ Route::post ..
 
 # next we will use controllers ..
 
+
+# php artisan make:controller UserController
+# php artisan make:controller WelcomeController
