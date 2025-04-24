@@ -143,3 +143,9 @@ Elequent ORM :
 # php artisan make:model Car -mc
 
 with migration and controller 
+
+==============
+
+table names ..
+
+protected $table= 'my_tasks';
