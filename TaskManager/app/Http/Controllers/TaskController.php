@@ -21,4 +21,20 @@ class TaskController extends Controller
 
         return response()->json($task,201);
     }
+    public function update(Request $request, $id)
+    {
+        $task= Task::findOrFail($id);
+
+        // $task->update([
+        //     'title' => $request->title,
+        //     'description' => $request->description,
+        //     'priority' => $request->priority
+        // ]);
+
+        // حتى يتسنى لي تحديث فقط الحقول المرسلة أستخدم كالآتي
+
+         $task->update($request->all());
+
+        return response()->json($task,200);
+    }
 }
