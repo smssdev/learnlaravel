@@ -253,3 +253,13 @@ Laravel مبني لدعم الإدخال الجماعي (mass assignment) بأم
 يسرّع التطوير (especially APIs & CRUDs).
 =====================================
 
+
+# php artisan migrate:fresh
+# php artisan mi:f
+
+# راجع
+https://laravel.com/docs/11.x/validation#available-validation-rules
+
+# 422 Unprocessable Content 
+ضمن الفاليديشن الخطأ
+
