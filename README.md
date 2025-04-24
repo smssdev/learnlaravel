@@ -90,3 +90,37 @@ From relase notes
 composer create-project laravel/laravel:11 TaskManager
 
 
+
+
+# MVC Model View Controller 
+
+Controller -> request  عن طريق ال route == اليوزر اللي ببعت الركويست
+Model -> بنبعت داتا اللي هي داتا بيز اللي هي من خلال model 
+ضمن الموديل بكون العلاقات كلها، هي أساس التعامل مع الداتابيز 
+View -> عرض الصفحات ، كباك اند ما بيلزم ، ممكن اعتبره ال json هو اللي بيرجع response 
+
+او صفحات blade 
+==============
+
+كل جدول ممكن يكون اله model
+
+فيه معايير معينة 
+
+-----------------
+
+# php artisan make:model Task
+
+الجدول جمع 
+الموديل مفرد
+
+============
+
+Elequent ORM :
+
+-m 
+--migration 
+
+# php artisan make:model Car -m 
+
+عمل موديل مع المايجريشن تبعها
+
