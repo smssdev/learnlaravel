@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class TaskController extends Controller
 {
+    public function index() {
+        $task= Task::all();
+        return response()->json($task,200);
+    }
     public function store(Request $request)
     {
         $task= Task::create([
