@@ -87,6 +87,6 @@ From relase notes
 
 # composer create-project laravel/laravel:11 test
 
-
+composer create-project laravel/laravel:11 TaskManager
 
 
