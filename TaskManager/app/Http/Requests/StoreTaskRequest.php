@@ -23,8 +23,19 @@ class StoreTaskRequest extends FormRequest
     {
         return [
             'title' => 'required|string|max:40',
-            'description' => 'nullable|string',
+            'description' => 'string',
             'priority' => 'required|integer|between:1,5',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'title.required' => 'حقل العنوان مطلوب.',
+            'title.max' => 'حقل العنوان يجب أن لا يزيد عن 40.',
+            'priority.required' => 'حقل الأولوية مطلوب.',
+            'priority.integer'  => 'يجب إدخال الأولوية كرقم صحيح.',
+            'priority.between'  => 'يجب أن تكون قيمة الأولوية بين 1 و 5.',
         ];
     }
 }
