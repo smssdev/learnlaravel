@@ -20,6 +20,15 @@ class TaskController extends Controller
         ]);
         return response()->json($task,201);
     }
+    public function store2(Request $request)
+    {
+        $task= new Task;
+        $task->title= $request->title;
+        $task->description= $request->description;
+        $task->priority= $request->priority;
+        $task->save();
+        return response()->json($task,201);
+    }
     public function update(Request $request, $id)
     {
         $task= Task::findOrFail($id);
