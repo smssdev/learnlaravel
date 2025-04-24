@@ -263,3 +263,7 @@ https://laravel.com/docs/11.x/validation#available-validation-rules
 # 422 Unprocessable Content 
 ضمن الفاليديشن الخطأ
 
+
+# use formRequest.
+
+# php artisan make:request StoreTaskRequest
