@@ -34,3 +34,6 @@ php artisan make:factory ProfileFactory --model=Profile
 php artisan make:factory PostFactory --model=Post
 php artisan make:factory TagFactory --model=Tag
 php artisan make:factory ImageFactory --model=Image
+===========
+
+php artisan make:seeder DatabaseSeeder
