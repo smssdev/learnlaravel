@@ -24,3 +24,8 @@ priority
 مرتبط باليوزر الخاص بك
 
 # php artisan make:model Profile -mc
+
+===========================================
+
+Users PK ==> hasOne Profile
+Profile FK ==> belongsTo one User

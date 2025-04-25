@@ -16,6 +16,14 @@ class ProfileController extends Controller
     public function store(StoreProfileRequest $request)
     {
         $data = $request->validated();
+        // Prevent duplicate profile creation
+        $existingProfile = Profile::where('user_id', $data['user_id'])->first();
+        if ($existingProfile) {
+            return response()->json([
+                'message' => 'A profile already exists for this user.',
+                'profile' => $existingProfile
+            ], 409); // 409 Conflict
+        }
         if (!empty($data['date_of_birth'])) {
             $data['date_of_birth'] = \Carbon\Carbon::createFromFormat('d-m-Y', $data['date_of_birth'])->format('Y-m-d');
         }
@@ -37,7 +45,7 @@ class ProfileController extends Controller
     }
     public function show($id)
     {
-        $profile = Profile::where('user_id',$id)->firstOrFail();
+        $profile = Profile::where('user_id', $id)->firstOrFail();
         return response()->json($profile, 200);
     }
     public function destroy($id)
