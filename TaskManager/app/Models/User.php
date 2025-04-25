@@ -48,4 +48,8 @@ class User extends Authenticatable
     public function profile() {
         return $this->hasone(Profile::class); // اليوزر هذا اله واحد بروفايل
     }
+    public function tasks() {
+        return $this->hasMany(Task::class); // اليوزر هذا اله عدة تاسكات
+    }
+
 }

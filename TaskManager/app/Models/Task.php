@@ -14,5 +14,9 @@ class Task extends Model
 
     protected $fillable = ['title','description','priority'];
 
+    public function user() {
+        return $this->belongsTo(User::class); // التاسك ينتمي إلى يوزر واحد
+    }
+
 
 }
