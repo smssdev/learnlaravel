@@ -124,3 +124,5 @@ category_id (FK)
 # php artisan make:seeder CategorySeeder 
 
 # php artisan db:seed --class=CateorySeeder
+
+# php artisan mi:f --seed
