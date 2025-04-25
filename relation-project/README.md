@@ -23,3 +23,5 @@ php artisan make:model Post -m
 php artisan make:model Tag -m
 php artisan make:model Image -m
 php artisan make:migration create_post_tag_table
+=====================
+
