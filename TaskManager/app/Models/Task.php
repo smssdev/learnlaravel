@@ -12,7 +12,7 @@ class Task extends Model
     // protected $table= 'tasks'; // ممكن تخصيصه
     // protected $primaryKey = 'id'; // ممكن تخصيصه
 
-    protected $fillable = ['title','description','priority'];
+    protected $fillable = ['title','description','priority','user_id'];
 
     public function user() {
         return $this->belongsTo(User::class); // التاسك ينتمي إلى يوزر واحد

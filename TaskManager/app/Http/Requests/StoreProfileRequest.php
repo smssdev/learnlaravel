@@ -26,7 +26,7 @@ class StoreProfileRequest extends FormRequest
             'phone' => 'required|string',
             'address' => 'nullable|string',
             'date_of_birth' => 'nullable|date_format:d-m-Y',
-            'bio' => 'nullable|string',
+            'bio' => 'nullable|string'
         ];
     }
 
@@ -36,7 +36,7 @@ class StoreProfileRequest extends FormRequest
             'user_id.exists' => 'اليوزر غير موجود',
             'user_id.required' => 'حقل المستخدم مطلوب.',
             'user_id.integer'  => 'يجب إدخال المستخدم كرقم صحيح.',
-            'phone.required' => 'حقل الهاتف مطلوب.',
+            'phone.required' => 'حقل الهاتف مطلوب.'
         ];
     }
 }

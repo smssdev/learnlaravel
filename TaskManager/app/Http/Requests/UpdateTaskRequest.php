@@ -24,7 +24,7 @@ class UpdateTaskRequest extends FormRequest
         return [
             'title' => 'someTimes|string|max:40',
             'description' => 'someTimes|nullable|string',
-            'priority' => 'someTimes|integer|between:1,5',
+            'priority' => 'someTimes|integer|between:1,5'
         ];
     }
 
@@ -33,7 +33,7 @@ class UpdateTaskRequest extends FormRequest
         return [
             'title.max' => 'حقل العنوان يجب أن لا يزيد عن 40.',
             'priority.integer'  => 'يجب إدخال الأولوية كرقم صحيح.',
-            'priority.between'  => 'يجب أن تكون قيمة الأولوية بين 1 و 5.',
+            'priority.between'  => 'يجب أن تكون قيمة الأولوية بين 1 و 5.'
         ];
     }
 }

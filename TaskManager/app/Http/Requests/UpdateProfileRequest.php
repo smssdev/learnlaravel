@@ -26,14 +26,14 @@ class UpdateProfileRequest extends FormRequest
             'phone' => 'someTimes|string',
             'address' => 'nullable|string',
             'date_of_birth' => 'nullable|date_format:d-m-Y',
-            'bio' => 'nullable|string',
+            'bio' => 'nullable|string'
         ];
     }
 
     public function messages()
     {
         return [
-            'user_id.integer'  => 'يجب إدخال المستخدم كرقم صحيح.',
+            'user_id.integer'  => 'يجب إدخال المستخدم كرقم صحيح.'
         ];
     }
 }

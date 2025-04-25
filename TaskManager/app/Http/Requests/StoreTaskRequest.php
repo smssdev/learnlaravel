@@ -22,9 +22,10 @@ class StoreTaskRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'user_id' => 'required|exists:users,id',
             'title' => 'required|string|max:40',
             'description' => 'string',
-            'priority' => 'required|integer|between:1,5',
+            'priority' => 'required|integer|between:1,5'
         ];
     }
 
@@ -35,7 +36,7 @@ class StoreTaskRequest extends FormRequest
             'title.max' => 'حقل العنوان يجب أن لا يزيد عن 40.',
             'priority.required' => 'حقل الأولوية مطلوب.',
             'priority.integer'  => 'يجب إدخال الأولوية كرقم صحيح.',
-            'priority.between'  => 'يجب أن تكون قيمة الأولوية بين 1 و 5.',
+            'priority.between'  => 'يجب أن تكون قيمة الأولوية بين 1 و 5.'
         ];
     }
 }
