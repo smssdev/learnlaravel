@@ -117,3 +117,10 @@ category_id (FK)
 
 # php artisan make:model Category -m
 # php artisan make:migration create_category_task_table
+================================
+
+# seeders
+
+# php artisan make:seeder CategorySeeder 
+
+# php artisan db:seed --class=CateorySeeder
