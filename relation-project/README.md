@@ -25,3 +25,5 @@ php artisan make:model Image -m
 php artisan make:migration create_post_tag_table
 =====================
 
+profiles (لعلاقة 1:1 مع user) 
+====================
