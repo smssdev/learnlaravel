@@ -18,5 +18,9 @@ class Task extends Model
         return $this->belongsTo(User::class); // التاسك ينتمي إلى يوزر واحد
     }
 
+    public function categories() {
+        return $this->belongsToMany(Category::class, 'category_task'); // التاسك تنتمي لعدة كاتوجريز
+    }
+
 
 }

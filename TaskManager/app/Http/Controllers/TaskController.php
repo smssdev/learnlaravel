@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreTaskRequest;
 use App\Http\Requests\UpdateTaskRequest;
 use App\Models\Task;
+use Illuminate\Http\Request;
 
 class TaskController extends Controller
 {
@@ -39,5 +40,10 @@ class TaskController extends Controller
     {
         $user = Task::findOrFail($id)->user;
         return response()->json($user,200);
+    }
+    public function addCategoriesToTask(Request $request, $taskId) {
+      $task= Task::findOrFail($taskId);
+      $task->categories()->attach($request->category_id);
+      return response()->json('Category attached succefully',200);
     }
 }
