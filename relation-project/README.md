@@ -27,3 +27,10 @@ php artisan make:migration create_post_tag_table
 
 profiles (لعلاقة 1:1 مع user) 
 ====================
+
+# ✅ الخطوة 1: إنشاء Factories
+
+php artisan make:factory ProfileFactory --model=Profile
+php artisan make:factory PostFactory --model=Post
+php artisan make:factory TagFactory --model=Tag
+php artisan make:factory ImageFactory --model=Image
