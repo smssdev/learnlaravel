@@ -13,12 +13,11 @@ Route::get('/user', function (Request $request) {
 
 Route::apiResource('tasks', TaskController::class);
 Route::get('task/{id}/user', [TaskController::class,'getTaskUser']);
+Route::post('tasks/{taskId}/categories',[TaskController::class,'addCategoriesToTask']);
+Route::get('tasks/{taskId}/categories',[TaskController::class,'getTaskCategories']);
+Route::get('categories/{categoryId}/tasks',[TaskController::class,'getCategoryTasks']);
 
 Route::apiResource('profiles', ProfileController::class);
 
 Route::get('user/{id}/profile', [UserController::class,'getUserProfile']);
 Route::get('user/{id}/tasks', [UserController::class,'getUserTasks']);
-
-Route::post('tasks/{taskId}/categories',[TaskController::class,'addCategoriesToTask']);
-Route::get('tasks/{taskId}/categories',[TaskController::class,'getTaskCategories']);
-Route::get('categories/{categoryId}/tasks',[TaskController::class,'getCategoryTasks']);
