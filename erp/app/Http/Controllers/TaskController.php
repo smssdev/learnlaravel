@@ -11,6 +11,11 @@ use Illuminate\Support\Facades\Auth;
 
 class TaskController extends Controller
 {
+    public function getAllTasks()
+    {
+        $tasks =Task::all();
+        return response()->json($tasks, 200);
+    }
     public function index()
     {
         $tasks = Auth::user()->tasks;
@@ -18,7 +23,7 @@ class TaskController extends Controller
     }
     public function store(StoreTaskRequest $request)
     {
-        $user_id = Auth::user()->id;
+        $user_id = Auth::user()->id; // المهام الخاصة باليوزر،، وليس كل المهام
         $validatedData = $request->validated();
         $validatedData['user_id'] = $user_id;
         $task = Task::create($validatedData);
