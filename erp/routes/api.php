@@ -12,9 +12,12 @@ Route::get('/user', function (Request $request) {
 
 Route::post('register', [UserController::class,'register']);
 Route::post('login', [UserController::class,'login']);
+Route::post('logout', [UserController::class,'logout'])->middleware('auth:sanctum');
 
 
-Route::apiResource('tasks', TaskController::class);
+
+
+Route::apiResource('tasks', TaskController::class)->middleware('auth:sanctum');
 Route::get('task/{id}/user', [TaskController::class,'getTaskUser']);
 Route::post('tasks/{taskId}/categories',[TaskController::class,'addCategoriesToTask']);
 Route::get('tasks/{taskId}/categories',[TaskController::class,'getTaskCategories']);

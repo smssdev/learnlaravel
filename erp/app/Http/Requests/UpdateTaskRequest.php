@@ -22,7 +22,6 @@ class UpdateTaskRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'user_id' => 'someTimes|exists:users,id',
             'title' => 'someTimes|string|max:40',
             'description' => 'someTimes|nullable|string',
             'priority' => 'someTimes|integer|between:1,5'
