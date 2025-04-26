@@ -1,0 +1,22 @@
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    direction: ltr;
+  }
+  
+  .v-application {
+    background-color: #f5f5f5;
+  }
+  
+  .v-navigation-drawer {
+    text-align: left;
+  }
+  
+  .v-list-item-title {
+    margin-left: 16px;
+  }
+  
+  .v-toolbar-title {
+    font-size: 1.25rem;
+    font-weight: 500;
+  }
