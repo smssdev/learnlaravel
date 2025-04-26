@@ -10,20 +10,25 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
-Route::post('register', [UserController::class,'register']);
-Route::post('login', [UserController::class,'login']);
-Route::post('logout', [UserController::class,'logout'])->middleware('auth:sanctum');
+Route::post('register', [UserController::class, 'register']);
+Route::post('login', [UserController::class, 'login']);
 
+Route::middleware('auth:sanctum')->group(function () {
+    Route::post('logout', [UserController::class, 'logout']);
+    Route::apiResource('tasks', TaskController::class);
 
+    Route::prefix('tasks')->group(function () {
+        Route::post('/{taskId}/categories', [TaskController::class, 'addCategoriesToTask']);
+        Route::get('/{taskId}/categories', [TaskController::class, 'getTaskCategories']);
+    });
 
+    Route::get('task/{id}/user', [TaskController::class, 'getTaskUser']);
 
-Route::apiResource('tasks', TaskController::class)->middleware('auth:sanctum');
-Route::get('task/{id}/user', [TaskController::class,'getTaskUser']);
-Route::post('tasks/{taskId}/categories',[TaskController::class,'addCategoriesToTask']);
-Route::get('tasks/{taskId}/categories',[TaskController::class,'getTaskCategories']);
-Route::get('categories/{categoryId}/tasks',[TaskController::class,'getCategoryTasks']);
+    Route::apiResource('profiles', ProfileController::class);
 
-Route::apiResource('profiles', ProfileController::class);
+    Route::get('categories/{categoryId}/tasks', [TaskController::class, 'getCategoryTasks']);
 
-Route::get('user/{id}/profile', [UserController::class,'getUserProfile']);
-Route::get('user/{id}/tasks', [UserController::class,'getUserTasks']);
+    Route::get('user/{id}/profile', [UserController::class, 'getUserProfile']);
+    Route::get('user/{id}/tasks', [UserController::class, 'getUserTasks']);
+
+});
