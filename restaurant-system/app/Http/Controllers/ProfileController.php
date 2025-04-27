@@ -38,6 +38,7 @@ class ProfileController extends Controller
      */
     public function show()
     {
+        return 1;
         $user = tap(Auth::user())->load('images');
         return response()->json($user);
     }
