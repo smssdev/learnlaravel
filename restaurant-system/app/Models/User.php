@@ -55,4 +55,8 @@ class User extends Authenticatable
         return $this->hasMany(Order::class); // كل يوزر اله عدة طلبات
     }
 
+    public function images() {
+        return $this->morphMany(Image::class, 'imageable'); // اليوزر ممكن يكون له عدة صور
+    }
+
 }

@@ -18,7 +18,7 @@ class order extends Model
 
     public function items()
     {
-        return $this->belongsToMany(Item::class)->withPivot('quantity', 'price');
+        return $this->belongsToMany(Item::class,'order_item')->withPivot('price', 'quantity');
         // الطلب ينتمي لعدة منتجات تماما كما أن المنتج يتبع لعدة طلبات
     }
 }
