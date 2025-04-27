@@ -11,9 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('roles', function (Blueprint $table) {
+        Schema::create('tables', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->unique();
+            $table->string('number')->unique()->comment('رقم الطاولة');
+            $table->enum('status', ['available', 'reserved', 'occupied'])->default('available')->comment('حالة الطاولة');
             $table->timestamps();
         });
     }
@@ -23,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('roles');
+        Schema::dropIfExists('tables');
     }
 };
