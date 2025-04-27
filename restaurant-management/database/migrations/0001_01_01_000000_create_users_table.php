@@ -11,18 +11,25 @@ return new class extends Migration
      */
     public function up(): void
     {
+        Schema::create('restaurants', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->string('address')->nullable();
+            $table->timestamps();
+        });
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('phone')->nullable();
+            $table->string('phone', 15)->nullable();
             $table->enum('status', ['active', 'inactive'])->default('active');
-
+            $table->string('job_title')->nullable();
+            $table->foreignId('restaurant_id')->nullable()->constrained()->onDelete('set null');
             $table->rememberToken();
             $table->timestamps();
-
+            $table->index('status');
         });
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {
@@ -39,6 +46,20 @@ return new class extends Migration
             $table->longText('payload');
             $table->integer('last_activity')->index();
         });
+
+        Schema::create('personal_access_tokens', function (Blueprint $table) {
+            $table->id();
+            $table->morphs('tokenable');
+            $table->string('name');
+            $table->string('token', 64)->unique();
+            $table->text('abilities')->nullable();
+            $table->timestamp('last_used_at')->nullable();
+            $table->timestamp('expires_at')->nullable();
+            $table->timestamps();
+        });
+
+
+
     }
 
     /**
@@ -46,6 +67,7 @@ return new class extends Migration
      */
     public function down(): void
     {
+        Schema::dropIfExists('restaurants');
         Schema::dropIfExists('users');
         Schema::dropIfExists('password_reset_tokens');
         Schema::dropIfExists('sessions');
