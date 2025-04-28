@@ -6,17 +6,17 @@ import Profile from '../views/Profile.vue';
 const routes = [
   {
     path: '/',
-    name: 'Login',
+    name: 'login',
     component: Login
   },
   {
     path: '/register',
-    name: 'Register',
+    name: 'register',
     component: Register
   },
   {
     path: '/profile',
-    name: 'Profile',
+    name: 'profile',
     component: Profile
   }
 ];
