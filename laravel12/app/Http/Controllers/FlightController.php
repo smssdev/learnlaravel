@@ -17,7 +17,6 @@ class FlightController extends Controller
         $flights= Flight::all();
         return $flights;
     }
-
     /**
      * Show the form for creating a new resource.
      */
