@@ -106,4 +106,11 @@ Route::middleware('auth:sanctum')->get('/me', function (Request $request) {
         'permissions' => $request->user()->getPermissionNames()
     ];
 });
+===================================
+
+# lesson 2
+
+
+php artisan make:controller API/AuthController
+
 
