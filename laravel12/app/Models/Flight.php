@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Concerns\HasUlids;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -9,7 +10,7 @@ use Illuminate\Database\Eloquent\Model;
 class Flight extends Model
 {
     /** @use HasFactory<\Database\Factories\FlightFactory> */
-    use HasFactory, HasUuids;
+    use HasFactory, HasUlids;
     protected $table = 'my_flights'; // Table name
     protected $primaryKey = 'flight_id'; // PK
     public $incrementing = false; // غير متزايد

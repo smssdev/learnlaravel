@@ -6,7 +6,6 @@ use App\Models\Flight;
 use App\Http\Requests\StoreFlightRequest;
 use App\Http\Requests\UpdateFlightRequest;
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
 
 class FlightController extends Controller
 {
