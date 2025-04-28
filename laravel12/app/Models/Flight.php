@@ -6,14 +6,27 @@ use Illuminate\Database\Eloquent\Concerns\HasUlids;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Ramsey\Uuid\Uuid;
 
 class Flight extends Model
 {
     /** @use HasFactory<\Database\Factories\FlightFactory> */
-    use HasFactory, HasUlids;
+    use HasFactory, HasUuids;
     protected $table = 'my_flights'; // Table name
     protected $primaryKey = 'flight_id'; // PK
     public $incrementing = false; // غير متزايد
     protected $keyType = 'string'; // نوع المفتاح الأساسي
     protected $fillable = ['flight_id', 'flight_name'];
+    public $timestamps = false;
+    // public function newUniqueId(): string
+    // {
+    //     return (string) Uuid::uuid4();
+    // }
+    // public function uniqueIds(): array
+    // {
+    //     return ['flight_id'];
+    // }
+
+
+
 }
