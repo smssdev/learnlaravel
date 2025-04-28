@@ -21,4 +21,11 @@ class Flight extends Model
         'flight_name' => 'تست من خلال النظام مع عداد',
         'counter' => 10,
     ];
+
+    // علاقة مع نموذج Booking
+    public function bookings()
+    {
+        return $this->hasMany(Booking::class,'flight_id', 'flight_id');
+    }
+
 }

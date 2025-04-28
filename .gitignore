@@ -1,0 +1,13 @@
+/laravel-api/vue-auth-demo/package-lock.json
+/laravel-api/vue-auth-demo/package.json
+/laravel-api/vue-auth-demo/src/App.vue
+/laravel-api/vue-auth-demo/src/components/Login.vue
+/laravel-api/vue-auth-demo/src/components/Profile.vue
+/laravel-api/vue-auth-demo/src/components/Register.vue
+/laravel-api/vue-auth-demo/src/main.js
+/laravel-api/vue-auth-demo/src/router/index.js
+/laravel-api/vue-auth-demo/vite.config.js
+/laravel-api/vue-auth-demo/src/plugins/vuetify.js
+/laravel-api/vue-auth-demo/src/views/Login.vue
+/laravel-api/vue-auth-demo/src/views/Profile.vue
+/laravel-api/vue-auth-demo/src/views/Register.vue

@@ -14,9 +14,33 @@ class FlightController extends Controller
      */
     public function index()
     {
-        $flights= Flight::all();
-        return $flights;
+        /* lazy loadings */
+        // $flights = Flight::all();
+        // foreach ($flights as $flight) {
+        //     // الوصول إلى العلاقة بدون تحميلها مسبقًا
+        //     echo $flight->bookings;  // سيؤدي هذا إلى ظهور خطأ إذا كان lazy loading ممنوعًا
+        // }
+        // return $flights;
+
+        /* eager loadings */
+
+        // Eager load 'bookings' with only 'flight_id' and 'name' columns
+        $flights = Flight::with(['bookings' => function ($query) {
+            $query->select('flight_id', 'name'); // Only load 'flight_id' and 'name' from bookings
+        }])->get();
+
+        // Transform the result to include only booking names and exclude the bookings array
+        return $flights->map(function ($flight) {
+            // Assign booking names to a new property
+            $flight->booking_names = $flight->bookings->pluck('name');
+
+            // Remove the original bookings relationship completely
+            unset($flight->bookings);
+
+            return $flight;
+        });;
     }
+
     /**
      * Show the form for creating a new resource.
      */
@@ -30,17 +54,17 @@ class FlightController extends Controller
     }
 
     public function incrementCounter($id)
-{
-    $flight = Flight::findOrFail($id);
+    {
+        $flight = Flight::findOrFail($id);
 
-    // زيادة العداد بدون تعديل التاريخ
-    // $flight->increment('counter');
-    Flight::withoutTimestamps(fn () => $flight->increment('counter'));
-    return response()->json([
-        'message' => 'تمت زيادة العداد بنجاح',
-        'counter' => $flight->counter
-    ]);
-}
+        // زيادة العداد بدون تعديل التاريخ
+        // $flight->increment('counter');
+        Flight::withoutTimestamps(fn() => $flight->increment('counter'));
+        return response()->json([
+            'message' => 'تمت زيادة العداد بنجاح',
+            'counter' => $flight->counter
+        ]);
+    }
 
 
     /**
