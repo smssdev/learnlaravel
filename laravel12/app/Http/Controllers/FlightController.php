@@ -23,7 +23,8 @@ class FlightController extends Controller
     public function create(Request $request)
     {
         $flight = new Flight();
-        $flight->flight_name = $request->input('flight_name');  // إضافة الاسم من المعلمات
+        if ($request->has('flight_name'))   $flight->flight_name = $request->input('flight_name');  // إضافة الاسم من المعلمات
+        if ($request->has('counter'))   $flight->counter = $request->input('counter');  // إضافة الاسم من المعلمات
         $flight->save();
         return $flight;
     }

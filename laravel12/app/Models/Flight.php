@@ -17,4 +17,8 @@ class Flight extends Model
     const CREATED_AT = 'creation_date';
     const UPDATED_AT = 'updated_date';
 
+    protected $attributes = [ // لتحديد القيم الافتراضية
+        'flight_name' => 'تست من خلال النظام مع عداد',
+        'counter' => 10,
+    ];
 }
