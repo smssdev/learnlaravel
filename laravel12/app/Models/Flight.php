@@ -13,7 +13,7 @@ class Flight extends Model
     protected $primaryKey = 'flight_id'; // PK
     public $incrementing = false; // غير متزايد
     protected $keyType = 'string'; // نوع المفتاح الأساسي
-    protected $fillable = ['flight_id', 'flight_name'];
+    protected $fillable = ['flight_name', 'counter'];
     const CREATED_AT = 'creation_date';
     const UPDATED_AT = 'updated_date';
 

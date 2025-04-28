@@ -11,4 +11,5 @@ Route::get('/user', function (Request $request) {
 
 Route::get('flights', [FlightController::class, 'index']);
 Route::post('flights', [FlightController::class, 'create']);
+Route::post('/flights/{id}/increment', [FlightController::class, 'incrementCounter']);
 

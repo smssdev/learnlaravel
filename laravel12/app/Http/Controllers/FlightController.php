@@ -28,6 +28,20 @@ class FlightController extends Controller
         return $flight;
     }
 
+    public function incrementCounter($id)
+{
+    $flight = Flight::findOrFail($id);
+
+    // زيادة العداد بدون تعديل التاريخ
+    // $flight->increment('counter');
+    Flight::withoutTimestamps(fn () => $flight->increment('counter'));
+    return response()->json([
+        'message' => 'تمت زيادة العداد بنجاح',
+        'counter' => $flight->counter
+    ]);
+}
+
+
     /**
      * Store a newly created resource in storage.
      */
