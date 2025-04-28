@@ -25,7 +25,6 @@ class FlightController extends Controller
     public function create(Request $request)
     {
         $flight = new Flight();
-        $flight->flight_id = (string) Str::uuid();  // توليد UUID جديد
         $flight->flight_name = $request->input('flight_name');  // إضافة الاسم من المعلمات
         $flight->save();
         return $flight;
